@@ -14,6 +14,7 @@ const ProductPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedColor, setSelectedColor] = useState<string>('');
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const ProductPage: React.FC = () => {
         setSelectedImage(0);
         setQuantity(1);
         setSelectedSize(foundProduct.sizes?.[0] || '');
+        setSelectedColor(foundProduct.colors?.[0] || '');
         
         const related = getRelatedProducts(productId);
         setRelatedProducts(related);
@@ -98,7 +100,7 @@ const ProductPage: React.FC = () => {
                   {product.images.map((image, index) => (
                     <button 
                       key={index}
-                      onClick={() => setSelectedImage(index)}
+                      onClick={() => setSelectedImage(Number(index))}
                       className={`flex-shrink-0 w-20 h-20 rounded-md overflow-hidden border-2 ${
                         selectedImage === index ? 'border-gold' : 'border-transparent'
                       }`}
@@ -169,12 +171,18 @@ const ProductPage: React.FC = () => {
                   <h3 className="font-semibold mb-2">Цвет:</h3>
                   <div className="flex flex-wrap gap-2">
                     {product.colors.map(color => (
-                      <div
+                      <button
                         key={color}
-                        className="px-3 py-1 border border-gray-300 rounded-md"
+                        onClick={() => setSelectedColor(color)}
+                        className={`px-3 py-1 border rounded-md ${
+                          selectedColor === color
+                            ? 'border-gold bg-gold/10 text-custom-black'
+                            : 'border-gray-300 text-gray-700 hover:border-gold/50'
+                        }`}
+                        type="button"
                       >
                         {color}
-                      </div>
+                      </button>
                     ))}
                   </div>
                 </div>

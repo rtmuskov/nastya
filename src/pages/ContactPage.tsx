@@ -51,7 +51,7 @@ const ContactPage: React.FC = () => {
                       г. Рязань, ул. Соборная, 15
                     </p>
                     <a 
-                      href="https://yandex.ru/maps/-/CDqsM6f8" 
+                      href="https://yandex.ru/maps/-/CHvbV4iG" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gold hover:underline inline-block mt-1"
@@ -251,11 +251,11 @@ const ContactPage: React.FC = () => {
           <h2 className="text-xl font-semibold p-6 border-b border-gray-200 font-montserrat">Наш магазин на карте</h2>
           <div className="h-[400px] w-full">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a23c1ae6b1e0f2c9f20ae7789b58172d4fc6d2ce0fb6dea40ea90a55b75f764&amp;source=constructor"
+              src="https://yandex.ru/map-widget/v1/?ll=39.738962%2C54.630602&z=16&pt=39.738962,54.630602,pm2rdl"
               width="100%"
               height="400"
               frameBorder="0"
-              title="GoldFashion на карте"
+              allowFullScreen
             ></iframe>
           </div>
         </div>
