@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
           <div className="relative h-80 md:h-96">
             <div className="absolute inset-0 bg-black/40 z-10"></div>
             <img 
-              src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg" 
+              src="/png/C-Warehouse-4-staircase-2048x1280.jpeg" 
               alt="О компании GoldFashion" 
               className="w-full h-full object-cover"
             />

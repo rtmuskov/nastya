@@ -13,11 +13,11 @@ const HomePage: React.FC = () => {
     <div className="page-transition">
       {/* Hero Section */}
       <section className="relative h-screen">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        {/* <div className="absolute inset-0 bg-black/60 z-10"></div> */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url(https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)` 
+            backgroundImage: `url(/png/e63af8e41b9a4a24a649acdfb1531509.jpg)` 
           }}
         ></div>
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-start">

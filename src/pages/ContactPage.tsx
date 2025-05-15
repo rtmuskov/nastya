@@ -68,15 +68,11 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Телефон</h3>
                     <p className="text-gray-700">
-                      <a href="tel:+74912555555" className="hover:text-gold transition-colors">
-                        +7 (4912) 55-55-55
+                      <a href="tel:+79155948755" className="hover:text-gold transition-colors">
+                      +7 915 594 87 55
                       </a>
                     </p>
-                    <p className="text-gray-700">
-                      <a href="tel:+74912666666" className="hover:text-gold transition-colors">
-                        +7 (4912) 66-66-66
-                      </a>
-                    </p>
+                    
                   </div>
                 </div>
                 
@@ -87,15 +83,11 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <p className="text-gray-700">
-                      <a href="mailto:info@goldfashion.ru" className="hover:text-gold transition-colors">
-                        info@goldfashion.ru
+                      <a href="mailto:nastya123ryaz@gmail.com" className="hover:text-gold transition-colors">
+                        nastya123ryaz@gmail.com
                       </a>
                     </p>
-                    <p className="text-gray-700">
-                      <a href="mailto:sales@goldfashion.ru" className="hover:text-gold transition-colors">
-                        sales@goldfashion.ru
-                      </a>
-                    </p>
+
                   </div>
                 </div>
                 
