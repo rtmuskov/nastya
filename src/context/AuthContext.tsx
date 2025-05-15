@@ -13,13 +13,13 @@ interface AuthContextType {
   isLoggedIn: boolean;
   userData: UserData | null;
   login: (email: string, password: string) => boolean;
-  register: (userData: UserData) => boolean;
+  register: (userData: UserData) => Promise<boolean>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [userData, setUserData] = useState<UserData | null>(null);
   const [users, setUsers] = useState<UserData[]>([]);
@@ -38,31 +38,49 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const register = (newUserData: UserData): boolean => {
+  const register = async (newUserData: UserData): Promise<boolean> => {
     // Check if email already exists
     if (users.some(user => user.email === newUserData.email)) {
+      console.log('Пользователь с таким email уже существует');
       return false;
     }
 
-    const updatedUsers = [...users, newUserData];
-    
-    // Save to localStorage
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
-    setUsers(updatedUsers);
-    
-    // Save to Excel
-    const excelSaved = saveRegistrationToExcel(newUserData);
-    if (!excelSaved) {
-      console.error('Failed to save registration data to Excel');
+    try {
+      console.log('Отправка данных на сервер:', newUserData);
+      // Send registration data to server
+      const response = await fetch('http://localhost:3000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUserData),
+      });
+
+      const responseData = await response.json();
+      console.log('Ответ от сервера:', responseData);
+
+      if (!response.ok) {
+        console.error('Ошибка при регистрации:', responseData.error);
+        return false;
+      }
+
+      const updatedUsers = [...users, newUserData];
+      
+      // Save to localStorage
+      localStorage.setItem('users', JSON.stringify(updatedUsers));
+      setUsers(updatedUsers);
+      
+      // Auto login after registration
+      setIsLoggedIn(true);
+      setUserData(newUserData);
+      localStorage.setItem('currentUser', JSON.stringify(newUserData));
+      
+      console.log('Регистрация успешно завершена');
+      return true;
+    } catch (error) {
+      console.error('Ошибка при регистрации:', error);
       return false;
     }
-    
-    // Auto login after registration
-    setIsLoggedIn(true);
-    setUserData(newUserData);
-    localStorage.setItem('currentUser', JSON.stringify(newUserData));
-    
-    return true;
   };
 
   const login = (email: string, password: string): boolean => {
@@ -86,17 +104,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('currentUser');
   };
 
+  const value = {
+    isLoggedIn,
+    userData,
+    login,
+    register,
+    logout
+  };
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, userData, login, register, logout }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = (): AuthContextType => {
+const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
 };
+
+export { AuthProvider, useAuth };
