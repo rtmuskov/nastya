@@ -4,22 +4,22 @@ export const categories: Category[] = [
   {
     id: 'men',
     name: 'Мужская одежда',
-    image: 'https://images.pexels.com/photos/2955375/pexels-photo-2955375.jpeg'
+    image: '/png/photo_1_2025-05-16_01-40-29.jpg'
   },
   {
     id: 'women',
     name: 'Женская одежда',
-    image: 'https://images.pexels.com/photos/994523/pexels-photo-994523.jpeg'
+    image: '/png/photo_4_2025-05-16_01-40-29.jpg'
   },
   {
     id: 'accessories',
     name: 'Аксессуары',
-    image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg'
+    image: '/png/photo_2_2025-05-16_01-40-29.jpg'
   },
   {
     id: 'shoes',
     name: 'Обувь',
-    image: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg'
+    image: '/png/photo_3_2025-05-16_01-40-29.jpg'
   }
 ];
 
@@ -31,10 +31,7 @@ export const products: Product[] = [
     originalPrice: 12990,
     description: 'Элегантное вечернее платье, идеально подходящее для особых случаев. Изготовлено из высококачественного материала с изысканной отделкой.',
     category: 'women',
-    images: [
-      'https://images.pexels.com/photos/994523/pexels-photo-994523.jpeg',
-      'https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg'
-    ],
+    images: ['/png/photo_2_2025-05-16_01-02-06.jpg'],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Черный', 'Красный', 'Синий'],
     isNew: true,
@@ -48,10 +45,7 @@ export const products: Product[] = [
     price: 24990,
     description: 'Классический мужской костюм для деловых встреч и официальных мероприятий. Безупречный крой и качественная ткань.',
     category: 'men',
-    images: [
-      'https://images.pexels.com/photos/2955375/pexels-photo-2955375.jpeg',
-      'https://images.pexels.com/photos/1049317/pexels-photo-1049317.jpeg'
-    ],
+    images: ['/png/photo_1_2025-05-16_01-36-22.jpg'],
     sizes: ['48', '50', '52', '54', '56'],
     colors: ['Черный', 'Темно-синий', 'Серый'],
     isFeatured: true,
@@ -64,10 +58,7 @@ export const products: Product[] = [
     originalPrice: 9990,
     description: 'Стильная кожаная сумка, которая подойдет под любой образ. Просторная и практичная.',
     category: 'accessories',
-    images: [
-      'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg',
-      'https://images.pexels.com/photos/934673/pexels-photo-934673.jpeg'
-    ],
+    images: ['/png/photo_1_2025-05-16_01-02-06.jpg'],
     colors: ['Коричневый', 'Черный', 'Бежевый'],
     isNew: false,
     discount: 20,
@@ -78,11 +69,9 @@ export const products: Product[] = [
     name: 'Кожаные туфли',
     price: 8990,
     description: 'Элегантные кожаные туфли ручной работы. Комфорт и стиль для уверенного шага.',
-    category: 'shoes',
-    images: [
-      'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg',
-      'https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg'
-    ],
+    category: 'shoes', 
+    images: ['/png/photo_10_2025-05-16_01-24-31.jpg'],
+    
     sizes: ['40', '41', '42', '43', '44', '45'],
     colors: ['Черный', 'Коричневый'],
     isFeatured: true,
@@ -94,10 +83,7 @@ export const products: Product[] = [
     price: 6990,
     description: 'Изысканная шелковая блузка для создания женственного образа. Мягкая и приятная к телу.',
     category: 'women',
-    images: [
-      'https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg',
-      'https://images.pexels.com/photos/6311158/pexels-photo-6311158.jpeg'
-    ],
+    images: ['/png/photo_11_2025-05-16_01-24-31.jpg'],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Белый', 'Бежевый', 'Голубой'],
     isNew: true,
@@ -109,10 +95,7 @@ export const products: Product[] = [
     price: 11990,
     description: 'Роскошный кашемировый свитер для тепла и комфорта. Легкий и мягкий, он станет любимой вещью в вашем гардеробе.',
     category: 'men',
-    images: [
-      'https://images.pexels.com/photos/10026492/pexels-photo-10026492.jpeg',
-      'https://images.pexels.com/photos/10026491/pexels-photo-10026491.jpeg'
-    ],
+    images: ['/png/photo_2_2025-05-16_01-36-22.jpg'],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: ['Серый', 'Бежевый', 'Темно-синий'],
     isFeatured: false,
@@ -124,10 +107,7 @@ export const products: Product[] = [
     price: 15990,
     description: 'Изящные золотые серьги с драгоценными камнями. Идеальное дополнение к вечернему наряду.',
     category: 'accessories',
-    images: [
-      'https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg',
-      'https://images.pexels.com/photos/1454171/pexels-photo-1454171.jpeg'
-    ],
+    images: ['/png/photo_6_2025-05-16_01-24-31.jpg'],
     colors: ['Золотой'],
     isNew: true,
     isFeatured: true,
@@ -140,10 +120,7 @@ export const products: Product[] = [
     originalPrice: 15990,
     description: 'Стильные замшевые ботинки для осенне-зимнего сезона. Утепленные и комфортные.',
     category: 'shoes',
-    images: [
-      'https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg',
-      'https://images.pexels.com/photos/1598508/pexels-photo-1598508.jpeg'
-    ],
+    images: ['/png/photo_4_2025-05-16_01-24-31.jpg'],
     sizes: ['38', '39', '40', '41', '42'],
     colors: ['Коричневый', 'Черный'],
     discount: 20,
@@ -155,10 +132,7 @@ export const products: Product[] = [
     price: 5990,
     description: 'Стильные джинсы slim fit из высококачественного денима. Универсальная модель на каждый день.',
     category: 'men',
-    images: [
-      'https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg',
-      'https://images.pexels.com/photos/1082526/pexels-photo-1082526.jpeg'
-    ],
+    images: ['/png/photo_3_2025-05-16_01-36-22.jpg'],
     sizes: ['30', '32', '34', '36', '38'],
     colors: ['Синий', 'Черный', 'Серый'],
     rating: 4.5
@@ -169,10 +143,7 @@ export const products: Product[] = [
     price: 4990,
     description: 'Элегантный шелковый шарф с уникальным принтом. Добавит изысканности любому образу.',
     category: 'accessories',
-    images: [
-      'https://images.pexels.com/photos/1451648/pexels-photo-1451648.jpeg',
-      'https://images.pexels.com/photos/1038000/pexels-photo-1038000.jpeg'
-    ],
+    images: ['/png/photo_9_2025-05-16_01-24-31.jpg'],
     colors: ['Мультиколор', 'Синий', 'Зеленый'],
     isFeatured: false,
     rating: 4.4
@@ -183,10 +154,7 @@ export const products: Product[] = [
     price: 19990,
     description: 'Роскошное вечернее платье для особых случаев. Изысканный дизайн и высочайшее качество.',
     category: 'women',
-    images: [
-      'https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg',
-      'https://images.pexels.com/photos/994523/pexels-photo-994523.jpeg'
-    ],
+    images: ['/png/photo_8_2025-05-16_01-24-31.jpg'],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: ['Черный', 'Красный', 'Синий'],
     isNew: true,
@@ -199,10 +167,7 @@ export const products: Product[] = [
     price: 3990,
     description: 'Классический кожаный ремень с элегантной пряжкой. Незаменимый аксессуар в гардеробе.',
     category: 'accessories',
-    images: [
-      'https://images.pexels.com/photos/934673/pexels-photo-934673.jpeg',
-      'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg'
-    ],
+    images: ['/png/photo_7_2025-05-16_01-24-31.jpg'],
     sizes: ['105', '110', '115', '120'],
     colors: ['Коричневый', 'Черный'],
     rating: 4.7

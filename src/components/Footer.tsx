@@ -76,11 +76,11 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-gold" />
-                <a href="tel:+74912555555" className="text-gray-300 hover:text-gold transition-colors">+7 (4912) 55-55-55</a>
+                <a href="tel:+74912555555" className="text-gray-300 hover:text-gold transition-colors">+7 915 594 87 55</a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-gold" />
-                <a href="mailto:info@goldfashion.ru" className="text-gray-300 hover:text-gold transition-colors">info@goldfashion.ru</a>
+                <a href="mailto:nastya123ryaz@gmail.com" className="text-gray-300 hover:text-gold transition-colors">nastya123ryaz@gmail.com</a>
               </li>
             </ul>
           </div>
